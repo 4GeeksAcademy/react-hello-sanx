@@ -108,9 +108,11 @@ function SecondsCounter() {
   };
 
   return (
-    <div className="d-flex flex-column align-items-center justify-content-center vh-100 bg-dark">
+    <div className="d-flex flex-column align-items-center justify-content-center vh-100 bg-dark p-3">
+      <div className="container" style={{ maxWidth: '500px' }}>
+      <div className="w-100 d-flex justify-content-center">
       <div
-        className="d-flex justify-content-center"
+        className=" d-flex justify-content-center w-100"
         style={{
           width: '25%',
           marginTop: '-8px',
@@ -119,7 +121,7 @@ function SecondsCounter() {
         }}
       >
         <button
-          className={`${normalButtonClass} me-2 w-50`}
+          className={`${normalButtonClass} me-sm-2 w-50`}
           onClick={() => handleSwitchCounter(true)}
           style={{ borderBottom: 'none', fontWeight: 'bold', textTransform: 'uppercase' }}
         >
@@ -134,12 +136,13 @@ function SecondsCounter() {
           <span className="text-dark">Regresivo</span>
         </button>
       </div>
+      </div>
 
-      <div className={`col-3 p-4 rounded-top-0 rounded-bottom shadow ${counterColorClass} text-center`}>
+      <div className={`col-12 p-4 rounded-top-0 rounded-bottom shadow ${counterColorClass} text-center`}>
         <div className={`display-4 fw-bold text-uppercase ${counterTextColorClass}`}>
           {isNormalCounter ? formatTime(seconds) : formatTime(countdownSeconds)}
         </div>
-        <div className="d-flex justify-content-around mt-3">
+        <div className="d-flex justify-content-around mt-3 flex-wrap">
           <button className={controlButtonClass} onClick={handlePlay}>Play</button>
           <button className={controlButtonClass} onClick={handlePause}>Pausa</button>
           <button className={controlButtonClass} onClick={handleStop}>Stop</button>
@@ -150,6 +153,7 @@ function SecondsCounter() {
             {isNormalCounter ? 'Crear Alerta' : 'Crear Intervalo'}
           </button>
         </div>
+      </div>
       </div>
     </div>
   );
